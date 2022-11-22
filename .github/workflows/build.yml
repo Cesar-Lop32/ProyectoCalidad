@@ -30,6 +30,7 @@ jobs:
           path: ..sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
+[15:19]
 - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
@@ -39,14 +40,14 @@ jobs:
       - name: Setup Nuget
         uses: Nuget/setup-nuget@v1.0.5
         with:
-                    dotnet-version: 4.8.x
+                    dotnet-version: 6.0.x
       - name: Install .NET Core
         uses: actions/setup-dotnet@v1.9.0
         with:
-          dotnet-version: 4.8.x
+          dotnet-version: 6.0.x
 
       - name: Restore nuget packages
-        run: nuget restore ElCaminoDeCostaRIca.sln
+        run: nuget restore FoodWasteProject.sln
 
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
