@@ -47,7 +47,7 @@ jobs:
           dotnet-version: 4.8.x
 
       - name: Restore nuget packages
-        run: nuget restore FoodWasteProject.sln
+        run: nuget restore ElCaminoDeCostaRIca.sln
 
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
